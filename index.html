@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -12,18 +15,18 @@
 
         <h1>Weather App</h1>
 
-        <di class="tab-container">
+        <div class="tab-container">
             <p class="tab" data-userWeather>Your Weather</p>
             <p class="tab" data-searchWeather>Search Weather</p>
         </div>
 
-        <div class="Weather-container">
+        <div class="weather-container">
 
             <!-- Grant location Container -->
-            <div class="grant-location-container">
+            <div class="sub-container grant-location-container">
                 <img src="./assets/location.png" alt="location_indication" width="80" height="80" loading="lazy">
                 <p>Grant Location Access</p>
-                <p>Allow access to get Information</p>
+                <p>Allow access to get Weather Information</p>
                 <button class="btn" data-grantAccess>Grant Access</button>
             </div>
 
@@ -36,13 +39,13 @@
             </form>
 
             <!-- Loading Screen Container -->
-            <div class="loading-container">
+            <div class="sub-container loading-container">
                 <img src="./assets/loading.gif" alt="load_img" width="150" height="150">
                 <p>Loading</p>
             </div>
 
             <!-- Show Weather Information -->
-            <div class="user-info-container">
+            <div class="sub-container user-info-container">
 
                 <!-- City Name and Flag -->
                 <div class="name">
@@ -61,7 +64,6 @@
 
 
                 <!-- 3-card  - Parameter-->
-
                 <div class="parameter-container">
 
                     <!-- card--1 -->
@@ -83,14 +85,11 @@
                         <img src="./assets/cloud.png" alt="cloud_img">
                         <p>CLouds</p>
                         <p data-cloudiness></p>
-                    </div>
+                    </div> 
 
-                    
                 </div>
 
             </div>
-
-
 
         </div>
 
