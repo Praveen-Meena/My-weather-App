@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
     /* font to be added */
     font-family: 'Merriweather Sans', sans-serif;
 }
@@ -18,6 +20,7 @@
     width:100vw;
     height:100vh;
     color: var(--colorLight2);
+    background-color: #112d4e;
     background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
 }
 
@@ -25,6 +28,8 @@ h1{
     text-align: center;
     padding-top: 20px;
     text-transform: uppercase;
+    margin-block: 2rem;
+    letter-spacing: 1.75px;
 }
 
 .tab-container{
@@ -54,24 +59,41 @@ h1{
     margin-block: 4rem;         /*Top and Bottum margin */
 }
 
-.btn{
-    all: unset;                  /* removing default properties of button */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .tab-container {
+        margin-top: 2rem;
+        width: 80%;
+    }
+
+    .tab {
+        font-size: 0.75rem;
+    }
+}
+
+.btn {
+    all: unset;
     font-size: 0.85rem;
     text-transform: uppercase;
-    border-radius: 5px;
-    background-color: var(--colorDark2);
-    cursor: pointer;
     padding: 10px 30px;
-    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--colorDark2);
 }
 
 .sub-container{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* normal case */
+/* normal case  - User weather Style*/
 .grant-location-container{
     display:none;
 }
@@ -87,6 +109,7 @@ h1{
 .grant-location-container p:first-of-type{
      font-size: 1.75rem;
      font-weight: 600;
+     text-align: center;
 }
 
 .grant-location-container p:last-of-type{
@@ -95,6 +118,7 @@ h1{
     margin-top: 0.75rem;
     margin-bottom: 1.75rem;
     letter-spacing: 0.75px;
+    text-align: center;
 }
 
 .loading-container{
@@ -106,6 +130,27 @@ h1{
 
 .loading-container p{
     text-transform: uppercase;
+}
+
+/* Styling Error handling Page */
+.api-error-container {
+    display: none;
+}
+
+.api-error-container.active {
+    display: flex;
+    gap: 1rem 0;
+}
+
+.api-error-container p {
+    text-align: center;
+}
+
+.api-error-container img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 .user-info-container{
@@ -153,8 +198,9 @@ h1{
     display: flex;
     gap: 10px 20px;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     margin-top: 2rem;
+    margin: 0 auto;
 } 
 .parameter{
     width: 30%;
@@ -166,23 +212,38 @@ h1{
     flex-direction: column;
     gap: 5px 0;
     align-items: center;
+    justify-content: space-between; 
 }
 
 .parameter img{
     width: 50px;
     height: 50px;    
+    object-fit: cover;
 }
 
-.parameter p:first-of-type{
+.parameter-title{
     font-size: 1.15rem;
     font-weight: 600;
     text-transform: uppercase;
 } 
-.parameter p:last-of-type{
+.parameter-value{
     font-size: 1rem;
     font-weight: 200;
 }
 
+@media (max-width: 768px) {
+    .parameter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parameter {
+        width: 100%;
+    }
+}
+
+
+/* search weather styles */
 .form-container{
     display: none;
     width: 90%;
@@ -217,9 +278,11 @@ h1{
     padding: unset;
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     border-radius: 100%;
-    margin-bottom: 1px;
+}
+
+.form-container .btn img {
+    object-fit: contain;
 }

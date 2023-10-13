@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <title>Weather Station | Praveen Meena</title>
     <link rel="icon" type="image/x-icon" href="/assets/Weather-icon.ico">
+    <title>Weather Station | Praveen Meena</title>
 </head>
 <body>
 
@@ -21,21 +21,22 @@
             <p class="tab" data-searchWeather>Search Weather</p>
         </div>
 
+        <!-- Weather Container -->
         <div class="weather-container">
 
             <!-- Grant location Container -->
             <div class="sub-container grant-location-container">
                 <img src="./assets/location.png" alt="location_indication" width="80" height="80" loading="lazy">
                 <p>Grant Location Access</p>
-                <p>Allow access to get Weather Information</p>
+                <p data-messageText>Allow access to get Weather Information</p>
                 <button class="btn" data-grantAccess>Grant Access</button>
             </div>
 
-            <!-- Search form  -> form-container-->
+            <!-- Search Country form  -> form-container-->
             <form class="form-container" data-searchForm>
                 <input placeholder="Search for City..." data-searchInput>
                 <button class="btn" type="submit">
-                    <img src="./assets/search.png" alt="Search_btn" width="20" height="20" loading="lazy">
+                    <img src="./assets/search.png" width="20" height="20" loading="lazy">
                 </button>
             </form>
 
@@ -51,7 +52,7 @@
                 <!-- City Name and Flag -->
                 <div class="name">
                     <p data-cityName></p>
-                    <img data-countryIcon>
+                    <img crossorigin="anonymous" data-countryIcon>
                 </div>
 
                 <!-- Weather Description -->
@@ -70,26 +71,33 @@
                     <!-- card--1 -->
                     <div class="parameter">
                         <img src="./assets/wind.png" alt="Windspeed_img">
-                        <p>Windspeed</p>
-                        <p data-windspeed></p>
+                        <p class="parameter-title">Windspeed</p>
+                        <p class="parameter-value" data-windspeed></p>
                     </div>
 
                     <!-- card-2 -->
                     <div class="parameter">
                         <img src="./assets/humidity.png" alt="humid_img">
-                        <p>Humidity</p>
-                        <p data-humidity></p>
+                        <p class="parameter-title" >Humidity</p>
+                        <p class="parameter-value" data-humidity></p>
                     </div>
 
                     <!-- card-3 -->
                     <div class="parameter">
                         <img src="./assets/cloud.png" alt="cloud_img">
-                        <p>CLouds</p>
-                        <p data-cloudiness></p>
+                        <p class="parameter-title">CLouds</p>
+                        <p class="parameter-value" data-cloudiness></p>
                     </div> 
 
                 </div>
 
+            </div>
+
+            <!-- handle api fetch error -->
+            <div class="sub-container api-error-container">
+                <img src="./assets/not-found.png" data-notFoundImg />
+                <p data-apiErrorText></p>
+                <button class="btn" data-apiErrorBtn>Retry</button>
             </div>
             
         </div>
