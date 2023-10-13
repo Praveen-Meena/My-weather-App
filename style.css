@@ -72,6 +72,9 @@ h1{
     .tab {
         font-size: 0.75rem;
     }
+    .wrapper{
+        overflow-y: scroll;
+    }
 }
 
 .btn {
